@@ -25,7 +25,7 @@ const ListApp = ({
   return (
     <div className="col-lg-9">
       <div className="row mb-5">
-        <h2 className="mb3">
+        <h2 className="mb-3">
           <span className="badge bg-danger" value={sort}>
             {titleSort()}
           </span>

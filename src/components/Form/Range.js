@@ -1,9 +1,10 @@
 import React from "react";
 
-const Range = (fontSize, setFontSize) => {
+const Range = ({ fontSize, setFontSize }) => {
   const handleSizeChange = (e) => {
     setFontSize(e.target.value);
   };
+  console.log(fontSize);
   return (
     <div className="mb-3">
       <label className="fw-bold mb-3 form-label" htmlFor="range">

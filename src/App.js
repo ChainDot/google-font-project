@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FontApp from "./components/FontApp";
 
-function App() {
+const App = () => {
   return (
     <>
       <header>
@@ -16,6 +16,6 @@ function App() {
       </footer>
     </>
   );
-}
+};
 
 export default App;
