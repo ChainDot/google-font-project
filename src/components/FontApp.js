@@ -13,7 +13,7 @@ const FontApp = () => {
   const [loading, setLoading] = useState(false);
   const [sort, setSort] = useState(options[0].label);
   const [text, setText] = useState(
-    "Portez ce vieux whisky au juge blond qui fume !? 0123456789"
+    "The quick brown fox jumps over the lazy dog  !? 0123456789"
   );
   const [fontSize, setFontSize] = useState("23");
   const url = `https://webfonts.googleapis.com/v1/webfonts?sort=${sort}&key=AIzaSyBFv26wh62iDoGPOxIZgAVKttXZ6GgINfI`;
@@ -42,7 +42,7 @@ const FontApp = () => {
   }, [url]);
 
   return (
-    <div className="row my-5">
+    <div className="row my-3">
       <SelectApp
         data={data}
         error={error}

@@ -4,9 +4,7 @@ const DarkMode = ({ children }) => {
   const [dark, setDark] = useState(
     JSON.parse(localStorage.getItem("darkMode")) || false
   );
-  const modeClasses = dark
-    ? "bg-dark text-white min-vh-100"
-    : "bg-light min-vh-100";
+  const modeClasses = dark ? "bg-dark text-white" : "bg-light";
 
   const handleDarkMode = () => {
     setDark(!dark);
@@ -18,7 +16,7 @@ const DarkMode = ({ children }) => {
 
   return (
     <section className={`${modeClasses}`}>
-      <div className="form-check form-switch">
+      <div className="form-check form-switch d-flex justify-content-end px-5 pt-3 ">
         <input
           onChange={handleDarkMode}
           className="form-check-input"
@@ -27,11 +25,10 @@ const DarkMode = ({ children }) => {
           checked={dark}
         />
         <label className="form-check-label" htmlFor="activate">
-          {" "}
-          {dark ? "DarkVador Mode" : "Jesus Mode"}
+          {dark ? "Dark Mode" : "Jesus Mode"}
         </label>
       </div>
-      {children}
+      <div>{children}</div>
     </section>
   );
 };

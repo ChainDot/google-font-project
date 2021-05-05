@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import GoogleFontLoader from "react-google-font-loader";
+import Options from "./Options";
 
 const Card = ({ data, text, fontSize }) => {
+  const [fontWeight, setFontWeight] = useState("");
+  console.log(fontWeight);
   return data.map((el) => {
     return (
       <article key={el.family} className="col-lg-6 mb-4">
-        <GoogleFontLoader fonts={[{ font: `${el.family}` }]} />
+        <GoogleFontLoader
+          fonts={[{ font: `${el.family}`, weights: [`${fontWeight}`] }]}
+        />
 
         <div className="shadow-sm border p-3 h-100">
-          <h2 className="h6 d-flex aling-items-center justify-content-between">
+          <h2 className="h5 d-flex aling-items-center justify-content-between">
             <span>{el.family}</span>
-            <small>{`${el.variants.length} variant(s)`}</small>
+            <span>
+              <Options
+                el={el}
+                fontWeight={fontWeight}
+                setFontWeight={setFontWeight}
+              />
+            </span>
           </h2>
           <p>
             <span className="badge bg-dark">{el.category}</span>
@@ -19,6 +30,7 @@ const Card = ({ data, text, fontSize }) => {
             className="sample"
             style={{
               fontFamily: `${el.family}`,
+              fontWeight: `${fontWeight}`,
               fontSize: `${fontSize}px`,
             }}
           >
