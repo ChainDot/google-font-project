@@ -15,7 +15,7 @@ const ListApp = ({
       case "date":
         return "Les plus récentes";
       case "popularity":
-        return "Les plus popolulaires";
+        return "Les plus populaires";
       case "trending":
         return "Top 10 trending";
       default:
