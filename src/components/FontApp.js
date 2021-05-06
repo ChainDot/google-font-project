@@ -16,7 +16,7 @@ const FontApp = () => {
     "The quick brown fox jumps over the lazy dog  !? 0123456789"
   );
   const [fontSize, setFontSize] = useState("23");
-  const url = `https://webfonts.googleapis.com/v1/webfonts?sort=${sort}&key=AIzaSyBFv26wh62iDoGPOxIZgAVKttXZ6GgINfI`;
+  const url = `https://webfonts.googleapis.com/v1/webfonts?sort=${sort}&key=${process.env.REACT_APP_FONTS_API_KEY}`;
 
   useEffect(() => {
     setLoading(true);
