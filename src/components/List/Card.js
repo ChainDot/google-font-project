@@ -12,7 +12,7 @@ const Card = ({ data, text, fontSize }) => {
           fonts={[{ font: `${el.family}`, weights: [`${fontWeight}`] }]}
         />
 
-        <div className="shadow-sm border p-3 h-100">
+        <div className="shadow-sm border p-3 h-100 rounded">
           <h2 className="h5 d-flex aling-items-center justify-content-between">
             <span>{el.family}</span>
             <span>
@@ -23,7 +23,7 @@ const Card = ({ data, text, fontSize }) => {
               />
             </span>
           </h2>
-          <p>
+          <p className="h5">
             <span className="badge bg-dark">{el.category}</span>
           </p>
           <p
