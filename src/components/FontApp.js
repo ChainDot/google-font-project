@@ -5,7 +5,7 @@ import ListApp from "./List/ListApp";
 const FontApp = () => {
   const options = [
     { label: "date", value: "Les plus récentes" },
-    { label: "popularity", value: "Les plus popolulaires" },
+    { label: "popularity", value: "Les plus populaires" },
     { label: "trending", value: "Top 10 trending" },
   ];
   const [data, setData] = useState([]);
