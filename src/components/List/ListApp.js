@@ -30,8 +30,12 @@ const ListApp = ({
             {titleSort()}
           </span>
         </h2>
-        {loading && <p>Loading in progress...</p>}
-        {error && <p>{error}</p>}
+        {loading && (
+          <p className="alert alert-light border-dark fw-bold">
+            Loading in progress...
+          </p>
+        )}
+        {error && <p className="alert alert-danger">{error}</p>}
 
         <Card
           data={data}
