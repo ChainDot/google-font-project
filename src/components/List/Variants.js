@@ -1,6 +1,6 @@
 import React from "react";
 
-const Options = ({ el, setFontWeight, fontWeight }) => {
+const Variants = ({ el, setFontWeight, fontWeight }) => {
   const handleFontOnChange = (e) => {
     setFontWeight(e.target.value);
   };
@@ -23,4 +23,4 @@ const Options = ({ el, setFontWeight, fontWeight }) => {
   );
 };
 
-export default Options;
+export default Variants;

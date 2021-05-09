@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import GoogleFontLoader from "react-google-font-loader";
-import Options from "./Options";
+import Variants from "./Variants";
 
 const Card = ({ data, text, fontSize }) => {
   const [fontWeight, setFontWeight] = useState("");
@@ -16,7 +16,7 @@ const Card = ({ data, text, fontSize }) => {
           <h2 className="h5 d-flex aling-items-center justify-content-between">
             <span>{el.family}</span>
             <span>
-              <Options
+              <Variants
                 el={el}
                 fontWeight={fontWeight}
                 setFontWeight={setFontWeight}
