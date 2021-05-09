@@ -82,9 +82,6 @@ const FontApp = () => {
   return (
     <div className="row my-3">
       <SelectApp
-        data={data}
-        error={error}
-        loading={loading}
         sort={sort}
         setSort={setSort}
         text={text}
@@ -98,11 +95,9 @@ const FontApp = () => {
         error={error}
         loading={loading}
         text={text}
-        setText={setText}
         fontSize={fontSize}
         setFontSize={setFontSize}
         sort={sort}
-        options={options}
       />
     </div>
   );
