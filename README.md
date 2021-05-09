@@ -20,7 +20,7 @@ react-google-font-loader
 
 ## Final rendering of the project
 
-https://app.netlify.com/sites/yellow-team-google-fonts-widget/overview
+https://yellow-team-google-fonts-widget.netlify.app/
 
 # Getting Started with Create React App
 
