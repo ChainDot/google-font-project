@@ -4,7 +4,7 @@ import Options from "./Options";
 
 const Card = ({ data, text, fontSize }) => {
   const [fontWeight, setFontWeight] = useState("");
-  console.log(fontWeight);
+  //console.log(fontWeight);
   return data.map((el) => {
     return (
       <article key={el.family} className="col-lg-6 mb-4">

@@ -8,6 +8,44 @@ const FontApp = () => {
     { label: "popularity", value: "Les plus populaires" },
     { label: "trending", value: "Top 10 trending" },
   ];
+
+  /* const initialState = {
+    data: [],
+    error: "",
+    loading: false,
+    sort: options[0].label,
+    text: "The quick brown fox jumps over the lazy dog  !? 0123456789",
+  };
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case "FETCH_INIT":
+        return {
+          ...state,
+          loading: true,
+        };
+      case "FETCH_SUCCESS":
+        return {
+          ...state,
+          loading: false,
+          data: data.items.slice(0, 10),
+        };
+      case "FETCH_FAILURE":
+        return {
+          ...state,
+          error: action.payload,
+        };
+      case "SET_STRING":
+        return {
+          ...state,
+          sort: state.,
+          text: acorn,
+        };
+      default:
+        throw new Error(`Unsupported action type ${action.type}`);
+    }
+  }; */
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -23,7 +61,7 @@ const FontApp = () => {
 
     fetch(url)
       .then((response) => {
-        console.log(response);
+        //console.log(response);
         if (!response.ok) {
           throw new Error(`Invalid url ${response.status}`);
         }
@@ -31,7 +69,7 @@ const FontApp = () => {
       })
       .then((data) => {
         setData(() => data.items.slice(0, 10));
-        console.log(data);
+        //console.log(data);
       })
       .catch((error) => {
         setError(error.message);
