@@ -5,7 +5,6 @@ import DarkMode from "./components/darkMode";
 
 const App = () => {
   document.title = "Google Fonts Widget";
-  console.log(document.head);
   return (
     <>
       <header>

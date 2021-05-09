@@ -1,8 +1,9 @@
 import React from "react";
 
-const MenuSelect = ({ sort, setSort, options }) => {
+const MenuSelect = ({ sort, setSort, OPTIONS }) => {
   const handleOptionChange = (e) => {
     setSort(e.target.value);
+    // dispatch({ type: "SET_VALUE" });
   };
 
   return (
@@ -16,7 +17,7 @@ const MenuSelect = ({ sort, setSort, options }) => {
         onChange={handleOptionChange}
         value={sort}
       >
-        {options.map((option) => (
+        {OPTIONS.map((option) => (
           <option key={option.label} value={option.label}>
             {option.value}
           </option>

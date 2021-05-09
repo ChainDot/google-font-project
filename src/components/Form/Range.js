@@ -8,7 +8,7 @@ const Range = ({ fontSize, setFontSize }) => {
       setFontSize(e.target.value);
     }
   };
-  console.log(fontSize);
+  // console.log(fontSize);
 
   return (
     <div className="mb-3">

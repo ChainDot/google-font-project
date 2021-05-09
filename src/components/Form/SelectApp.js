@@ -10,12 +10,15 @@ const SelectApp = ({
   text,
   fontSize,
   setFontSize,
-  options,
+  OPTIONS,
+  state,
+  dispatch,
+  ACTIONS,
 }) => {
   return (
     <div className="col-lg-3 mb-4">
       <div style={{ position: "sticky", top: "0px" }}>
-        <MenuSelect sort={sort} setSort={setSort} options={options} />
+        <MenuSelect sort={sort} setSort={setSort} OPTIONS={OPTIONS} />
         <InputText text={text} setText={setText} />
         <Range fontSize={fontSize} setFontSize={setFontSize} />
       </div>

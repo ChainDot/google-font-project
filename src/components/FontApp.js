@@ -3,61 +3,67 @@ import SelectApp from "./Form/SelectApp";
 import ListApp from "./List/ListApp";
 
 const FontApp = () => {
-  const options = [
+  const OPTIONS = [
     { label: "date", value: "Les plus récentes" },
     { label: "popularity", value: "Les plus populaires" },
     { label: "trending", value: "Top 10 trending" },
   ];
+  // const reducer = (state, action) => {
+  //   switch (action.type) {
+  //     case "FETCH_INIT":
+  //       return {
+  //         ...state,
+  //         loading: true,
+  //       };
+  //     case "FETCH_SUCCESS":
+  //       return {
+  //         ...state,
+  //         loading: false,
+  //         data: state.data.items.slice(0, 10),
+  //       };
+  //     case "FETCH_FAILURE":
+  //       return {
+  //         ...state,
+  //         loading: false,
+  //         error: action.payload,
+  //       };
+  //     case "SET_VALUE":
+  //       return {
+  //         ...state,
+  //         sort: state.sort,
+  //         text: state.text,
+  //         fontSize: state.fontSize,
+  //       };
+  //     default:
+  //       throw new Error(`Unsupported action type ${action.type}`);
+  //   }
+  // };
+  // const initialState = {
+  //   data: [],
+  //   error: "",
+  //   loading: false,
+  //   sort: OPTIONS[0].label,
+  //   text: "The quick brown fox jumps over the lazy dog  !? 0123456789",
+  //   fontSize: "23",
+  // };
+  // const [state, dispatch] = useReducer(reducer, initialState);
 
-  /* const initialState = {
-    data: [],
-    error: "",
-    loading: false,
-    sort: options[0].label,
-    text: "The quick brown fox jumps over the lazy dog  !? 0123456789",
-  };
-  const [state, dispatch] = useReducer(reducer, initialState);
+  // const { data, error, loading, sort, text, fontSize } = state;
 
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case "FETCH_INIT":
-        return {
-          ...state,
-          loading: true,
-        };
-      case "FETCH_SUCCESS":
-        return {
-          ...state,
-          loading: false,
-          data: data.items.slice(0, 10),
-        };
-      case "FETCH_FAILURE":
-        return {
-          ...state,
-          error: action.payload,
-        };
-      case "SET_STRING":
-        return {
-          ...state,
-          sort: state.,
-          text: acorn,
-        };
-      default:
-        throw new Error(`Unsupported action type ${action.type}`);
-    }
-  }; */
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [sort, setSort] = useState(options[0].label);
+  const [sort, setSort] = useState(OPTIONS[0].label);
   const [text, setText] = useState(
-    "The quick brown fox jumps over the lazy dog  !? 0123456789"
+    "Portez ce vieux whisky au juge blond qui fume !? 0123456789"
   );
   const [fontSize, setFontSize] = useState("23");
+
   const url = `https://webfonts.googleapis.com/v1/webfonts?sort=${sort}&key=${process.env.REACT_APP_FONTS_API_KEY}`;
 
   useEffect(() => {
     setLoading(true);
+    // dispatch({ type: "FETCH_INIT" });
 
     fetch(url)
       .then((response) => {
@@ -68,10 +74,12 @@ const FontApp = () => {
         return response.json();
       })
       .then((data) => {
+        // dispatch({ type: "FETCH_SUCCESS", payload: data });
         setData(() => data.items.slice(0, 10));
         //console.log(data);
       })
       .catch((error) => {
+        // dispatch({ type: "FETCH_FAILURE", payload: error.message });
         setError(error.message);
       })
       .finally(() => {
@@ -88,7 +96,7 @@ const FontApp = () => {
         setText={setText}
         fontSize={fontSize}
         setFontSize={setFontSize}
-        options={options}
+        OPTIONS={OPTIONS}
       />
       <ListApp
         data={data}
