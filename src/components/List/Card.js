@@ -1,36 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import GoogleFontLoader from "react-google-font-loader";
-import Variants from "./Variants";
 
 const Card = ({ data, text, fontSize }) => {
-  const [fontWeight, setFontWeight] = useState("");
   //console.log(fontWeight);
+
   return data.map((el) => {
     return (
       <article key={el.family} className="col-lg-6 mb-4">
-        <GoogleFontLoader
-          fonts={[{ font: `${el.family}`, weights: [`${fontWeight}`] }]}
-        />
+        <GoogleFontLoader fonts={[{ font: `${el.family}` }]} />
 
-        <div className="shadow-sm border p-3 h-100 rounded">
-          <h2 className="h5 d-flex aling-items-center justify-content-between">
+        <div className="shadow-sm border p-3 h-100 rounde">
+          <h2 className="h6 d-flex align-items-center justify-content-between">
             <span>{el.family}</span>
             <span>
-              <Variants
-                el={el}
-                fontWeight={fontWeight}
-                setFontWeight={setFontWeight}
-              />
+              <option>{`${el.variants.length} variant(s)`}</option>
             </span>
           </h2>
-          <p className="h5">
+          <p>
             <span className="badge bg-dark">{el.category}</span>
           </p>
           <p
             className="sample"
             style={{
               fontFamily: `${el.family}`,
-              fontWeight: `${fontWeight}`,
               fontSize: `${fontSize}px`,
             }}
           >
@@ -40,7 +32,9 @@ const Card = ({ data, text, fontSize }) => {
             rel="noopener noreferrer"
             target="_blank"
             className="text-danger"
-            href={`https://fonts.google.com/specimen/${el.family}`}
+            href={`https://fonts.google.com/specimen/${el.family
+              .split(" ")
+              .join("+")}`}
           >
             Voir sur Google Fonts (ouvre un nouveau tab)
           </a>

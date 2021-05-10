@@ -16,8 +16,12 @@ const Range = ({ fontSize, setFontSize }) => {
         <label className="fw-bold mb-3 form-label" htmlFor="range">
           La taille de police :
         </label>
+        <label className="fw-bold mb-3 form-label" htmlFor="input">
+          test
+        </label>
         <div className="d-flex">
           <input
+            id="input"
             className="form-control form-control-sm mb-3 me-2"
             type="number"
             min="8"

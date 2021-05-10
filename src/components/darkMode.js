@@ -24,7 +24,7 @@ const DarkMode = ({ children }) => {
           id="activate"
           checked={dark}
         />
-        <label className="form-check-label" htmlFor="activate">
+        <label className="form-check-label mx-2" htmlFor="activate">
           {dark ? "Dark Mode" : "Bright Mode"}
         </label>
       </div>

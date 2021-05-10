@@ -57,7 +57,7 @@ const FontApp = () => {
   const [text, setText] = useState(
     "Portez ce vieux whisky au juge blond qui fume !? 0123456789"
   );
-  const [fontSize, setFontSize] = useState("23");
+  const [fontSize, setFontSize] = useState("18");
 
   const url = `https://webfonts.googleapis.com/v1/webfonts?sort=${sort}&key=${process.env.REACT_APP_FONTS_API_KEY}`;
 

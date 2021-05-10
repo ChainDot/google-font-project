@@ -17,11 +17,13 @@ const MenuSelect = ({ sort, setSort, OPTIONS }) => {
         onChange={handleOptionChange}
         value={sort}
       >
-        {OPTIONS.map((option) => (
-          <option key={option.label} value={option.label}>
-            {option.value}
-          </option>
-        ))}
+        {OPTIONS.map((option) => {
+          return (
+            <option key={option.label} value={option.label}>
+              {option.value}
+            </option>
+          );
+        })}
       </select>
     </div>
   );
