@@ -16,7 +16,7 @@ react-google-font-loader
 
 ## Outline structure of the project
 
-![p](https://github.com/ChainDot/google-font-project/blob/main/Outline%20Project%20google%20fonts%20widget.png)
+![p](https://github.com/ChainDot/google-font-project/blob/main/Outline_Project_google_fonts_widget.png)
 
 ## Final rendering of the project
 
